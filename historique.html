@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- STYLES PERSO -->
+    <link rel="stylesheet" href="style.css">
+    <title>Notre histoire</title>
+</head>
+
+<body>
+
+    <div class="container-fluid sticky-top">
+
+        <!-- DEBUT HEADER -->
+        <header class="row mb-3 py-1" style="background-color:#f6f5f0;">
+            <nav class="navbar navbar-expand-sm">
+                <div class="container-fluid d-flex">
+                    <div class="">
+                        <a class="navbar-brand mx-auto" href="./index.html"><img id="logo" src="./images/logo-ms.png"
+                                alt="logo" width="200px"></a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse lead fs-3 text-center" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto mx-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="produits.html" style="color:#b9a491;">Nos produits</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="historique.html" style="color:#b9a491;">Notre histoire</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html" style="color:#b9a491;">A propos de</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle " style="color:#b9a491;" href="#" id="navbarDropdown"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Mon compte
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="login.html" style="color:#b9a491;">Connexion</a>
+                                    </li>
+
+                                    <li><a class="dropdown-item" href="signup.html"
+                                            style="color:#b9a491;">Inscription</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Page-pdt.html" style="color:#b9a491;"><img
+                                        src="images/icons8-shopaholic-50.png" class="img-fluid icone-nav"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+    </div>
+    </header>
+    <!-- FIN HEADER -->
+
+    <!-- DEBUT MAIN -->
+    <!-- inclusion du fichier css -->
+    <style>
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .icon1 {
+            width: 30%;
+        }
+
+        body {
+            background-color: #c1af9e19;
+        }
+
+        .card-title {
+            color: #6b5f535f;
+        }
+
+        .navbar-brand2 {
+            color: #cebaa65f;
+
+        }
+    </style>
+
+    </head>
+
+    <body>
+
+        <!-- barre de navigation fixe  
+        
+            <div class="container-fluid px-0 lead fixed-top">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="d-flex ms-3 justify-content-start">
+                    <a class="navbar-brand2 fs-5 pe-3 fw-bold" href="#">À propos de nous</a>
+                    <a class="navbar-brand fs-6" href="#">Culture</a>
+                    <a class="navbar-brand fs-6" href="#">Diversité</a>
+                    <a class="navbar-brand fs-6" href="#">Valeurs</a>
+                </div>
+                </nav>
+            </div>-->
+
+        <!-- carousel responssive -->
+
+        <div class="container-fluid d-flex px-0  justify-content-center">
+
+            <div class="col-12 shadow col-lg-8 justify-content-center">
+                <div id="carouselExampleInterval" class="carousel pt-5 slide " data-bs-ride="carousel">
+                    <div class="carousel-inner  ">
+                        <div class="carousel-item active" data-bs-interval="3000">
+                            <img src="./images/manshopBannière1.png" class="d-block w-100 " alt="...">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img src="./images/manshopBannière2.png" class="d-block w-100 " alt="...">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img src="./images/manshopBannière3.png" class="d-block w-100 " alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- boutton de redirection vers les offres d'emploie  -->
+
+        <div class="container-fluid  lead">
+            <div class="d-grid gap-2  col-4 mx-auto pt-5 lead">
+                <button class="btn btn-light border-2 border-dark shadow" type="button">Consulter nos Offres</button>
+            </div>
+        </div>
+
+        <!-- courte présentation -->
+
+        <div class="container-fluid lead text-center">
+            <div class="col-6 mx-auto pt-5">
+                <h1 class="card-title">QUI SOMMES NOUS ?</h1>
+                <p class="pt-2">
+                    C'est le moment idéal pour rejoindre le parcours de Manshop,
+                    qui est passé du statut de pionnier dans le monde du commerce électronique
+                    à celui de devenir le point de départ de la mode en Europe. Nous connectons consommateurs,
+                    marques et partenaires à travers 25 pays. Contribuez à la création de solutions digitales et
+                    durables pour la mode,
+                    la logistique, la recherche, en rendant accessible la mode de la tête aux pieds à plus de 50
+                    millions de consommateurs.
+                </p>
+            </div>
+        </div>
+
+        <!-- un container contenant de block de cartes responssive -->
+
+        <div class="container-fluid d-flex mx-auto row py-5 pt-5 justify-content-around lead">
+
+            <div class="card border-dark my-3 justify-content-center text-center col-8 col-lg-3 shadow"
+                style="max-width: 25rem;">
+                <img src="./images/ceintre200.png" class="card-img-top rounded icon1 mx-auto my-3 d-block"
+                    alt="ceintre">
+                <div class="card-body1 my-3 text-dark">
+                    <h5 class="card-title my-3">Une Plateforme Pour la Mode</h5>
+                    <p class="card-text my-auto">Fondée en 2008 à Berlin par David Schneider et Robert Gentz,
+                        Zalando est une entreprise de mode et de technologie qui continue de se développer en tant que
+                        plateforme de mode afin de connecter les personnes et la mode en ligne et hors ligne.
+                        Nous créons des idées et développons des solutions qui permettent à tous les participants
+                        de générer de la valeur ajoutée par le biais de notre plateforme.</p>
+                </div>
+            </div>
+
+            <div class="card border-dark my-3 justify-content-center text-center col-8 col-lg-3 shadow"
+                style="max-width: 25rem;">
+                <img src="./images/ceintre200.png" class="card-img-top rounded icon1 mx-auto my-3 d-block"
+                    alt="ceintre">
+                <div class="card-body1 my-3 text-dark">
+                    <h5 class="card-title my-3">Expérience d'Achat</h5>
+                    <p class="card-text my-auto">Au cœur de notre pensée et de nos actions se trouvent nos clients.
+                        Nous leur proposons un service exceptionnel et une expérience d'achat unique que nous améliorons
+                        sans cesse.
+                        Nous comptons à ce jour plus de 50 millions de clients actifs répartis sur 25 marchés.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- un deuxième container contenant de block de cartes responssive -->
+
+        <div class="container-fluid mx-auto row d-flex py-5 pt-5 justify-content-around lead">
+
+            <div class="card border-dark justify-content-center text-center my-3 col-8 col-lg-3 shadow"
+                style="max-width: 25rem;">
+                <img src="./images/ia200.png" class="card-img-top icon1 rounded mx-auto my-3 d-block" alt="brain">
+                <div class="card-body1 my-3 text-dark">
+                    <h5 class="card-title my-3">Une Technologie d'Avant-Garde</h5>
+                    <p class="card-text my-auto">La technologie Zalando constitue le noyau de tous les produits et
+                        services que nous proposons sur notre plateforme,
+                        ainsi que la base de presque tous nos processus internes. Notre mission à long terme est
+                        d'anticiper les innombrables et divers points d’interaction entre les consommateurs et la mode,
+                        en vue de concevoir la technologie adaptée pour les réaliser.</p>
+                </div>
+            </div>
+
+            <div class="card border-dark justify-content-center text-center my-3 col-8 col-lg-3 shadow"
+                style="max-width: 25rem;">
+                <img src="./images/dna200.png" class="card-img-top icon1 rounded mx-auto my-3 d-block" alt="adn">
+                <div class="card-body1 my-3 text-dark">
+                    <h5 class="card-title my-3">Notre ADN</h5>
+                    <p class="card-text my-auto">Zalando sait tirer profit des compétences de ses
+                        quatre divisions : Mode, Technologie, Opérations commerciales et Logistique.
+                        Mis à part notre vision d’offrir une valeur ajoutée à tous les participants de l’industrie de la
+                        mode,
+                        la particularité de notre entreprise est de créer un environnement de travail
+                        aussi inspirant que diversifié et d’offrir des opportunités illimitées.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- logo stylisé -->
+
+        <img src="./images/Bannière2.png"
+            class="img-fluid border-top border-4 border-secondary border-bottom border-4 border-secondary" alt="...">
+
+        <!-- information fonctionnement de l'entreprise -->
+
+        <div class="container-fluid lead text-center">
+            <div class="col-6 mx-auto py-5">
+                <h1 class="card-title">Comment Nous Travaillons</h1>
+            </div>
+
+
+
+
+            <!-- container de trois cartes -->
+
+            <div class="col mx-auto row py-5 justify-content-around lead">
+
+                <div class="card border-dark mb-3 px-0 col-8 col-md-3 shadow" style="max-width: 30rem;">
+                    <div class="card-header">Collaborer</div>
+                    <div class="card-body text-dark">
+                        <p class="card-text">Nous travaillons avec des équipes ambitieuses sur des thèmes variés.
+                            Pour nous, collaborer signifie bien plus que travailler en équipe.
+                            Nos équipes et départements unissent leurs forces pour atteindre nos objectifs communs.</p>
+                    </div>
+                </div>
+
+                <div class="card border-dark mb-3 px-0 col-8 col-md-3 shadow" style="max-width: 30rem;">
+                    <div class="card-header">Contribuer</div>
+                    <div class="card-body text-dark">
+                        <p class="card-text">Nous cherchons constamment à innover.
+                            Nous contribuons à l'avenir de la mode grâce à nos approches nouvelles
+                            et nous évoluons de notre statut de commerçant en ligne à la plateforme Zalando. Chez nous,
+                            vous ne changez pas les règles du jeu, vous inventez le jeu.</p>
+                    </div>
+                </div>
+
+                <div class="card border-dark mb-3 px-0 col-8 col-md-3 shadow" style="max-width: 30rem;">
+                    <div class="card-header">Influencer</div>
+                    <div class="card-body text-dark">
+                        <p class="card-text">Nous sommes convaincus que chacun peut faire la différence.
+                            C'est pour cela que nous encourageons nos collaborateurs à contribuer à notre longue
+                            réussite.
+                            Chez nous chacun peut apporter sa pierre à l'édifice et écrire sa propre histoire.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- style ombrée au dessus  -->
+
+        <div class="container-fluid shadow pb-5 col-6 mx-auto pt-5"></div>
+
+        <!-- deuxième boutton redirection offres d'emploie -->
+
+        <div class="container-fluid py-5 lead" style="background-image: url('./images/Bannière3.png');">
+            <div class="d-grid gap-2 col-4 mx-auto py-5 lead">
+                <button class="btn btn-light" type="button">Consulter nos Offres</button>
+            </div>
+        </div>
+
+        <!-- style ombrée au dessous  -->
+
+        <div class="container-fluid shadow pb-5 col-6 mx-auto pt-5"></div>
+
+
+        <!-- philosophie entreprise -->
+
+        <div class="container-fluid py-5 lead text-center">
+            <div class="col-6 mx-auto pY-5">
+                <h1 class="card-title">Drive the Change</h1>
+                <p class="pt-2">
+                    Chez Manshop, nos idées sont grandes et nos actions audacieuses.
+                    Chaque rôle a son impact. C'est pourquoi nous recherchons des personnes comme vous,
+                    des personnes désireuses de se développer personnellement et professionnellement.
+                    Vous explorez, commencez, échouez, apprenez, vous vous améliorez et vous avancez.
+                </p>
+            </div>
+        </div>
+
+        <!-- FIN MAIN -->
+
+        <!-- DEBUT FOOTER -->
+        <footer class="row mt-3 bg-dark text-center text-md-start" style="color:#b9a491;">
+            <div class="d-flex align-items-center flex-column flex-md-row p-5" style="background-color:#f6f5f0">
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Liens utiles :</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color:#b9a491;">Accueil</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color:#b9a491;">A Propos</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color:#b9a491;">Mentions
+                                légales</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color:#b9a491;">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-5 offset-md-1 mb-3">
+                    <form>
+                        <h5>Abonnez-vous à notre newsletter</h5>
+                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                            <label for="newsletter1" class="visually-hidden">Adresse email</label>
+                            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                            <button class="btn btn-secondary text-white" type="button">S'abonner</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="d-flex align-items-center flex-column flex-md-row pt-4 mt-4 w-100 border-top">
+                <p>© 2022 Man Shop Company. All rights reserved.</p>
+            </div>
+        </footer>
+        <!-- FIN FOOTER -->
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+
+    </body>
+
+</html>

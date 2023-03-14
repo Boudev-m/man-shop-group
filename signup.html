@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- STYLES PERSO -->
+    <link rel="stylesheet" href="style.css">
+    <title>Inscription</title>
+</head>
+
+<body class="bg-dark">
+
+    <div class="container-fluid sticky-top">
+
+        <!-- DEBUT HEADER -->
+        <header class="row mb-3 py-1" style="background-color:#f6f5f0;">
+            <nav class="navbar navbar-expand-sm">
+                <div class="container-fluid d-flex">
+                    <div class="">
+                        <a class="navbar-brand mx-auto" href="./index.html"><img id="logo" src="./images/logo-ms.png"
+                                alt="logo" width="200px"></a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse lead fs-3 text-center" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto mx-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="produits.html" style="color:#b9a491;">Nos produits</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="historique.html" style="color:#b9a491;">Notre histoire</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html" style="color:#b9a491;">A propos de</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle " style="color:#b9a491;" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Mon compte
+                                </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="login.html" style="color:#b9a491;">Connexion</a></li>
+                                 
+                                <li><a class="dropdown-item" href="signup.html" style="color:#b9a491;">Inscription</a></li>
+                            </ul>
+                              </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Page-pdt.html" style="color:#b9a491;"><img src="images/icons8-shopaholic-50.png" class="img-fluid icone-nav"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+    </div>
+    </header>
+    <!-- FIN HEADER -->
+
+    <!-- DEBUT MAIN -->
+    <div class="row p-5" style="background-color: #212529;">
+        <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5 p-5 rounded center text-center mx-auto"
+            style='background:#f6f5f0 ;color:#b9a491;'>
+            <h2>Créer un compte</h2>
+            <form action='' method='post' class='form-inline'>
+                <div class='col-9 col-md-7 col-lg-7 form-group my-3 mx-auto'>
+                    <input type='text' name='firstName' class='form-control' placeholder='Nom'>
+                </div>
+                <div class='col-9 col-md-7 col-lg-7 form-group my-3 mx-auto'>
+                    <input type='text' name='lastName' class='form-control' placeholder='Prénom'>
+                </div>
+                <div class='col-9 col-md-7 col-lg-7 form-group my-3 mx-auto'>
+                    <input type='text' name='adress' class='form-control' placeholder='Adresse'>
+                </div>
+                <div class='col-9 col-md-7 col-lg-7 form-group my-3 mx-auto'>
+                    <input type='text' name='zipcode' class='form-control' placeholder='Code postal'>
+                </div>
+                <div class='col-9 col-md-7 col-lg-7 form-group my-3 mx-auto'>
+                    <input type='text' name='city' class='form-control' placeholder='Ville'>
+                </div>
+                <div class='col-9 col-md-7 col-lg-7 form-group my-3 mx-auto'>
+                    <input type='email' name='pseudo' class='form-control' placeholder='Email'>
+                </div>
+                <div class='col-9 col-md-7 col-lg-7 form-group my-3 mx-auto'>
+                    <input type='password' name='password' class='form-control' placeholder='Mot de passe'>
+                </div>
+                <button type='submit' class='btn btn-secondary'>Valider</button>
+            </form>
+        </div>
+    </div>
+    <!-- FIN MAIN -->
+
+    <!-- DEBUT FOOTER -->
+    <footer class="row mt-3 text-center bg-dark text-md-start" style="color:#b9a491;">
+        <div class="d-flex align-items-center flex-column flex-md-row p-5" style="background-color:#f6f5f0">
+            <div class="col-6 col-md-2 mb-3">
+                <h5>Liens utiles :</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color:#b9a491;">Accueil</a>
+                    </li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color:#b9a491;">A Propos</a>
+                    </li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color:#b9a491;">Mentions
+                            légales</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0" style="color:#b9a491;">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-5 offset-md-1 mb-3">
+                <form>
+                    <h5>Abonnez-vous à notre newsletter</h5>
+                    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                        <label for="newsletter1" class="visually-hidden">Adresse email</label>
+                        <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                        <button class="btn btn-secondary text-white" type="button">S'abonner</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="d-flex align-items-center flex-column flex-md-row pt-4 mt-4 w-100 border-top">
+            <p>© 2022 Man Shop Company. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- FIN FOOTER -->
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
