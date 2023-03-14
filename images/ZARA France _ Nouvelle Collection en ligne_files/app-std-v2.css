@@ -1,0 +1,880 @@
+.screen-reader-text {
+	position: absolute;
+	width: 999px;
+}[dir=ltr] .screen-reader-text {
+	left: -9999px;
+}[dir=rtl] .screen-reader-text {
+	right: -9999px;
+}
+
+:root,
+.theme--base {
+	--color-main-000: #fff;
+	--color-main-005: #f2f2f2;
+	--color-main-010: #e5e5e5;
+	--color-main-020: #ccc;
+	--color-main-040: #999;
+	--color-main-060: #666;
+	--color-main-080: #333;
+	--color-main: #000;
+	--color-emphasis: #ec0909;
+	--color-emphasis-background: #ffd8d6;
+	--color-notification: #ff930b;
+	--color-notification-background: #fff4e7;
+	--color-done: #4cd964;
+	--color-sales: #ffe800;
+
+	/*
+		Alvaro: Provide font family outside of zds-theme.
+		For components that mount outside the app root, like OneTrust
+	*/
+	--font-family-main: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
+}
+
+.theme--dark,
+.theme--dark .theme--base {
+	--color-main-000: #000;
+	--color-main-005: #333;
+	--color-main-010: #666;
+	--color-main-020: #999;
+	--color-main-040: #ccc;
+	--color-main-060: #e5e5e5;
+	--color-main-080: #f2f2f2;
+	--color-main: #fff;
+}
+
+/*
+	Carlos: This is for the MkSpots we wrap for APPs because they
+	have implemented Dark Mode based on user preferences and we did
+	so based on a store configuration (done for 'Hour of the planet' event)
+*/
+@media (prefers-color-scheme: dark) {
+	.apps-wrapper {
+		--color-main-000: #000;
+		--color-main-005: #333;
+		--color-main-010: #666;
+		--color-main-020: #999;
+		--color-main-040: #ccc;
+		--color-main-060: #e5e5e5;
+		--color-main-080: #f2f2f2;
+		--color-main: #fff;
+	}
+}
+
+:root {
+	--grid-spacer-48: 60px;
+	--grid-spacer-64: 80px;
+	--grid-spacer-104: 80px;
+	--grid-spacer-144: 60px;
+	--grid-spacer-200: 80px;
+	--grid-spacer-264: 80px;
+	--grid-spacing-01: 60px;
+	--grid-spacing-02: 80px;
+	--grid-spacing-03: 80px;
+	--grid-spacing-04: 60px;
+	--grid-spacing-05: 80px;
+	--grid-spacing-06: 80px;
+}
+
+@media screen and (min-width: 1024px) {
+	:root {
+		--grid-spacer-48: 48px;
+		--grid-spacer-64: 64px;
+		--grid-spacer-104: 104px;
+		--grid-spacer-144: 144px;
+		--grid-spacer-200: 200px;
+		--grid-spacer-264: 264px;
+		--grid-spacing-01: 48px;
+		--grid-spacing-02: 64px;
+		--grid-spacing-03: 104px;
+		--grid-spacing-04: 144px;
+		--grid-spacing-05: 200px;
+		--grid-spacing-06: 264px;
+	}
+}
+
+@media screen and (min-width: 1600px) {
+	:root {
+		--grid-spacer-48: 64px;
+		--grid-spacer-64: 88px;
+		--grid-spacer-104: 136px;
+		--grid-spacer-144: 176px;
+		--grid-spacer-200: 248px;
+		--grid-spacer-264: 336px;
+		--grid-spacing-01: 64px;
+		--grid-spacing-02: 88px;
+		--grid-spacing-03: 136px;
+		--grid-spacing-04: 176px;
+		--grid-spacing-05: 248px;
+		--grid-spacing-06: 336px;
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	:root {
+		--grid-spacer-48: 88px;
+		--grid-spacer-64: 104px;
+		--grid-spacer-104: 160px;
+		--grid-spacer-144: 216px;
+		--grid-spacer-200: 300px;
+		--grid-spacer-264: 400px;
+		--grid-spacing-01: 88px;
+		--grid-spacing-02: 104px;
+		--grid-spacing-03: 160px;
+		--grid-spacing-04: 216px;
+		--grid-spacing-05: 300px;
+		--grid-spacing-06: 400px;
+	}
+}
+
+/* stylelint-disable selector-max-type, selector-no-qualifying-type */
+html {
+	min-height: 100%;
+}
+
+html:lang(zh),
+html:lang(ja),
+html:lang(kr),
+html:lang(ru),
+html:lang(el),
+html:lang(bg),
+html:lang(mk),
+html:lang(uk) {
+	--font-family-main: 'Arial', Sans-Serif;
+	--font-weight-condensed: bold;
+}
+
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	min-height: inherit;
+}
+
+/*
+	Carlos: iOS is not only using black and white as background color
+	in their views so we set a transparent one to use whatever they set
+*/
+.apps-wrapper body,
+.apps-wrapper body.theme {
+	background-color: transparent;
+}
+
+html:lang(zh) body {
+	-webkit-font-smoothing: none;
+	-moz-osx-font-smoothing: auto;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+body.disable-scroll {
+	overflow: hidden;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.disable-pull-refresh {
+	-ms-scroll-chaining: none;
+	    overscroll-behavior: none;
+}
+
+/* stylelint-disable-next-line selector-max-id */
+.theme--embedded .layout-header,
+.theme--embedded .layout__sidebar,
+.theme--embedded .layout__footer,
+.theme--embedded .accessibility-widget-button,
+.theme--embedded .chat-container,
+.theme--embedded .policy-popup__overlay,
+.theme--embedded #onetrust-consent-sdk {
+	display: none;
+}
+
+/* IE first media to fix unsupported CSS vars under media queries */
+:root {
+	--grid-columns: 12;
+	--grid-column-gutter: 20px;
+	--grid-width: 1024px;
+	--grid-lateral-margin: 20px;
+	--grid-column-width: calc((100% - var(--grid-column-gutter) * 11) / 12);
+	--margined-grid-column-width: calc((var(--grid-width) - var(--grid-column-gutter) * 11) / 12);
+}
+
+@media screen and (max-width: 1023px) {
+	:root {
+		--grid-columns: 4;
+		--grid-column-gutter: 8px;
+		--grid-column-width: calc((100% - var(--grid-column-gutter) * 3 - var(--grid-lateral-margin) * 2) / 4);
+		--grid-lateral-margin: 20px;
+		--grid-width: 100%;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	:root {
+		--grid-columns: 12;
+		--grid-column-gutter: 20px;
+		--grid-lateral-margin: 20px;
+		--grid-width: 676px;
+		--grid-column-width: calc((100% - var(--grid-column-gutter) * 11) / 12);
+		--margined-grid-column-width: calc((var(--grid-width) - var(--grid-column-gutter) * 11) / 12);
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	:root {
+		--grid-width: 892px;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	:root {
+		--grid-width: 1180px;
+	}
+}
+
+@media screen and (min-width: 1600px) {
+	:root {
+		--grid-width: 1372px;
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	:root {
+		--grid-width: 1564px;
+	}
+}
+
+@media screen and (min-width: 2160px) {
+	:root {
+		--grid-width: 1996px;
+	}
+}
+
+@media screen and (min-width: 2560px) {
+	:root {
+		--grid-width: 2092px;
+	}
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "ZaraSRPLS";
+	font-weight: bold;
+	src: url(../static/media/ZaraSRPLS_Font-Regular.443a1d43.eot);
+	src:
+		local('?'),
+		url(../static/media/ZaraSRPLS_Font-Regular.443a1d43.eot?#iefix) format('embedded-opentype'),
+		url(../static/media/ZaraSRPLS_Font-Regular.78d27c09.woff2) format('woff2'),
+		url(../static/media/ZaraSRPLS_Font-Regular.61d36936.woff) format('woff'),
+		url(../static/media/ZaraSRPLS_Font-Regular.086503a8.ttf) format('truetype');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "Apercu";
+	src: url(../static/media/Apercu.ea2fc91b.eot);
+	src:
+		local('?'),
+		url(../static/media/Apercu.ea2fc91b.eot?#iefix) format('embedded-opentype'),
+		url(../static/media/Apercu.aaffbd39.woff2) format('woff2'),
+		url(../static/media/Apercu.37728173.woff) format('woff'),
+		url(../static/media/Apercu.8d03cdc8.ttf) format('truetype');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "Apercu";
+	font-weight: bold;
+	src: url(../static/media/Apercu-bold.88011198.eot);
+	src:
+		local('?'),
+		url(../static/media/Apercu-bold.88011198.eot?#iefix) format('embedded-opentype'),
+		url(../static/media/Apercu-bold.e5be6c11.woff2) format('woff2'),
+		url(../static/media/Apercu-bold.2ff84c45.woff) format('woff'),
+		url(../static/media/Apercu-bold.f9d18b62.ttf) format('truetype');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "embassybt";
+	font-weight: bold;
+	src: url(../static/media/Embassy-BT.94a0fa97.eot);
+	src:
+		local('?'),
+		url(../static/media/Embassy-BT.94a0fa97.eot) format('embedded-opentype'),
+		url(../static/media/Embassy-BT.07bcf587.woff2) format('woff2'),
+		url(../static/media/Embassy-BT.15d43ac5.woff) format('woff'),
+		url(../static/media/Embassy-BT.d7cb028f.ttf) format('truetype');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "customSans";
+	font-weight: bold;
+	src: url(../static/media/customSans.254fbc06.eot);
+	src:
+		local('?'),
+		url(../static/media/customSans.254fbc06.eot) format('embedded-opentype'),
+		url(../static/media/customSans.eb961c7e.woff2) format('woff2'),
+		url(../static/media/customSans.6c87bd3e.woff) format('woff'),
+		url(../static/media/customSans.c64150c2.ttf) format('truetype');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: "ZaraAthleticz";
+	src: url(../static/media/zaraathleticz-regular.17a9c9e0.eot);
+	src:
+		local('?'),
+		url(../static/media/zaraathleticz-regular.17a9c9e0.eot) format('embedded-opentype'),
+		url(../static/media/zaraathleticz-regular.88a53927.woff2) format('woff2'),
+		url(../static/media/zaraathleticz-regular.a24c762b.woff) format('woff'),
+		url(../static/media/zaraathleticz-regular.5443d9a7.ttf) format('truetype');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'BaronMTModern';
+	font-weight: 400;
+	src: url(../static/media/BaronMTModernThin.84285a6d.eot);
+	src:
+		local('?'),
+		url(../static/media/BaronMTModernThin.84285a6d.eot) format('embedded-opentype'),
+		url(../static/media/BaronMTModernThin.9b512d38.woff2) format('woff2'),
+		url(../static/media/BaronMTModernThin.859e1b93.woff) format('woff'),
+		url(../static/media/BaronMTModernThin.c14b0c2b.ttf) format('truetype');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'XXemeEtageRegular';
+	src: url(../static/media/XXemeEtageRegular.c6e0c108.eot);
+	src:
+		local('?'),
+		url(../static/media/XXemeEtageRegular.c6e0c108.eot) format('embedded-opentype'),
+		url(../static/media/XXemeEtageRegular.ac59468b.woff2) format('woff2'),
+		url(../static/media/XXemeEtageRegular.2c5a48ec.woff) format('woff'),
+		url(../static/media/XXemeEtageRegular.05d85716.ttf) format('truetype');
+}
+
+:root {
+	--theme-focus-outline-width: 6px;
+}
+
+.theme,
+.theme__app {
+	min-height: inherit;
+}
+
+.theme,
+.theme .theme--base {
+	color: var(--color-content-high);
+	fill: var(--color-content-high);
+	font-family: var(--font-family-main);
+	font-size: var(--font-size-paragraph-l);
+	height: 100%;
+	line-height: 1.231;
+	letter-spacing: var(--letter-spacing-paragraph-l);
+	text-transform: none;
+	font-stretch: var(--font-stretch-normal);
+	font-weight: var(--font-weight-light);
+}
+
+[dir] .theme, [dir] .theme .theme--base {
+	background-color: var(--color-background-base);
+}
+
+.theme--keyboard-user *:focus {
+	outline: var(--theme-focus-outline-width) solid var(--color-surface-low-alt);
+}
+
+.theme--mouse-user *:focus {
+	/* stylelint-disable-next-line declaration-no-important */
+	outline: 0 !important;
+}
+
+.toast-bar {
+	bottom: 0;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	position: fixed;
+	width: 100%;
+	z-index: 1000; /* Some elements like the drawer of docz has a very high z-index */
+}[dir=ltr] .toast-bar {
+	left: 0;
+}[dir=rtl] .toast-bar {
+	right: 0;
+}
+
+.toast-container {
+	overflow: hidden;
+	position: relative;
+}
+
+[dir] .toast-container {
+	background: transparent;
+}
+
+.toast {
+	align-items: center;
+	color: var(--color-content-inverse);
+	display: flex;
+	flex-flow: row nowrap;
+	font-family: var(--font-family-main);
+	font-size: var(--font-size-paragraph-m-highlight);
+	justify-content: space-between;
+	min-height: 48px;
+	position: relative;
+	width: 100%;
+	line-height: var(--line-height-paragraph-m-highlight);
+	letter-spacing: var(--letter-spacing-paragraph-m-highlight);
+	text-transform: none;
+	font-stretch: var(--font-stretch-normal);
+	font-weight: 400;
+}
+
+[dir] .toast {
+	padding: var(--spacing-03) var(--spacing-04);
+}
+
+[dir] .toast:not(:only-child):not(:last-child) {
+	margin-bottom: var(--spacing-02);
+}
+
+[dir] .toast--success {
+	background-color: var(--color-surface-high);
+}
+
+[dir] .toast--error {
+	background-color: var(--color-semantic-danger-high);
+}
+
+.toast__icon {
+	fill: var(--color-content-inverse);
+	height: 18px;
+	width: 18px;
+}
+
+[dir=ltr] .toast__icon {
+	margin-right: var(--spacing-02);
+}
+
+[dir=rtl] .toast__icon {
+	margin-left: var(--spacing-02);
+}
+
+.toast__message {
+	flex: 7;
+}
+
+.toast__action {
+	flex: 3;
+	font-stretch: inherit;
+	font-weight: inherit;
+	text-transform: uppercase;
+}
+
+[dir] .toast__action {
+	cursor: pointer;
+	text-align: end;
+}
+
+@-webkit-keyframes revealIn {
+	0% {
+		bottom: -96px;
+	}
+
+	100% {
+		bottom: 0;
+	}
+}
+
+@keyframes revealIn {
+	0% {
+		bottom: -96px;
+	}
+
+	100% {
+		bottom: 0;
+	}
+}
+
+@-webkit-keyframes revealOut {
+	0% {
+		bottom: 0;
+	}
+
+	100% {
+		bottom: -96px;
+	}
+}
+
+@keyframes revealOut {
+	0% {
+		bottom: 0;
+	}
+
+	100% {
+		bottom: -96px;
+	}
+}
+
+@-webkit-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.toast {
+		width: 360px;
+	}
+
+	.toast-bar {
+		bottom: 32px;
+		width: auto;
+	}
+
+	[dir=ltr] .toast-bar {
+		left: 32px;
+	}
+
+	[dir=rtl] .toast-bar {
+		right: 32px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.toast {
+		width: 368px;
+	}
+
+	.toast__icon {
+		height: 16px;
+		width: 16px;
+	}
+}
+
+@media screen and (min-width: 1600px) {
+	.toast {
+		width: 416px;
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	.toast {
+		width: 512px;
+	}
+
+	.toast__icon {
+		height: 20px;
+		width: 20px;
+	}
+}
+
+.button {
+	box-sizing: border-box;
+	color: var(--color-content-inverse);
+	display: inline-block;
+	font-size: var(--font-size-body-l-highlight);
+	text-decoration: none;
+	width: 100%;
+	line-height: var(--line-height-body-l-highlight);
+	letter-spacing: var(--letter-spacing-body-l-highlight);
+	text-transform: uppercase;
+	font-stretch: var(--font-stretch-condensed);
+	font-weight: var(--font-weight-condensed);
+}[dir] .button {
+	background: var(--color-surface-high);
+	border: 1px solid var(--color-surface-high);
+	cursor: pointer;
+	padding: 10px var(--spacing-03);
+	text-align: center;
+}
+
+.button--small {
+	font-size: var(--font-size-body-s-highlight);
+	line-height: var(--line-height-body-s-highlight);
+	letter-spacing: var(--letter-spacing-body-s-highlight);
+	text-transform: uppercase;
+	font-stretch: var(--font-stretch-condensed);
+	font-weight: var(--font-weight-condensed);
+}
+
+[dir] .button--small {
+	padding-bottom: 8px;
+	padding-top: 8px;
+}
+
+[dir] .button.button--with-second-line {
+	padding-bottom: 2px;
+	padding-top: 2px;
+}
+
+.button:disabled {
+	color: var(--color-content-low);
+}
+
+[dir] .button:disabled {
+	background: var(--color-surface-low);
+	border-color: var(--color-surface-low);
+	cursor: default;
+}
+
+[dir] .button:not(:disabled):hover {
+	background: var(--color-surface-high-alt);
+	border-color: var(--color-surface-high-alt);
+}
+
+.button--secondary {
+	color: var(--color-content-high);
+}
+
+[dir] .button--secondary {
+	background: var(--color-background-base);
+}
+
+.button--secondary:disabled {
+	color: var(--color-content-low);
+}
+
+[dir] .button--secondary:disabled {
+	background: var(--color-background-base);
+	border-color: var(--color-content-low);
+}
+
+.button--secondary:not(:disabled):hover {
+	color: var(--color-content-high);
+}
+
+[dir] .button--secondary:not(:disabled):hover {
+	background: var(--color-background-base);
+	border-color: var(--color-content-mid);
+}
+
+.theme--keyboard-user .button:not(.button--secondary):focus {
+	outline-color: var(--color-content-mid);
+}
+
+.button .button__lines-wrapper {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+}
+
+.button__second-line {
+	color: var(--color-content-mid);
+	font-size: var(--font-size-body-s);
+	line-height: var(--line-height-body-s);
+	letter-spacing: var(--letter-spacing-body-s);
+	text-transform: uppercase;
+	font-stretch: var(--font-stretch-condensed);
+	font-weight: var(--font-weight-light);
+}
+
+.button--small .button__second-line {
+	font-size: var(--font-size-body-xs);
+	line-height: var(--line-height-body-xs);
+	letter-spacing: var(--letter-spacing-body-xs);
+	text-transform: uppercase;
+	font-stretch: var(--font-stretch-condensed);
+	font-weight: var(--font-weight-light);
+}
+
+[dir] .button--small .button__second-line {
+	transform: scale(0.8);
+}
+
+.button:disabled .button__second-line {
+	color: var(--color-content-low);
+}
+
+@media screen and (min-width: 1024px) {
+	[dir] .button {
+		padding-bottom: 8px;
+		padding-top: 8px;
+	}
+}
+
+/* All importants required to override Equalweb widget default styles */
+/* stylelint-disable selector-max-compound-selectors */
+/* stylelint-disable declaration-no-important */
+/* stylelint-disable selector-max-id */
+/* stylelint-disable selector-max-type */
+.accessibility-widget-button {
+	bottom: 72px !important;
+	height: 32px !important;
+	position: fixed !important;
+	top: initial !important;
+	width: 32px !important;
+}
+[dir] .accessibility-widget-button {
+	border-radius: 40px;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+[dir=ltr] .accessibility-widget-button {
+	right: 20px !important;
+}
+[dir=rtl] .accessibility-widget-button {
+	left: 20px !important;
+}
+
+#INDbtnTooltip,
+.accessibility-widget-button {
+	z-index: 11 !important;
+}
+
+/* Overwrites the background color and color variables for the accesibility button, its default color is: #067d8d  */
+#INDmenu-btn {
+	--indmaincolor: transparent !important;
+	--indsecondcolor: transparent !important;
+}
+[dir] #INDmenu-btn {
+
+	background: none !important;
+}
+
+/* Overwrite right margin for Chrome accesibility button */
+[dir=ltr] .INDpositionRight #INDmenu-btn {
+	right: 20px !important;
+}
+[dir=rtl] .INDpositionRight #INDmenu-btn {
+	left: 20px !important;
+}
+
+/* Create background for accesubility icon */
+#INDmenu-btn .accessibility-widget-button__background {
+	height: 32px;
+	position: absolute;
+	width: 32px;
+	z-index: -1;
+}
+[dir] #INDmenu-btn .accessibility-widget-button__background {
+	background: var(--color-background-base);
+	border-radius: 100%;
+	margin: 4px 4px;
+}
+
+/* We need to overwrite accesibility button default styles for #INDmenu-btn */
+#INDmenu-btn .accessibility-widget-button__icon,
+.INDpositionRight #INDmenu-btn svg {
+	height: 40px !important;
+	width: 40px !important;
+}
+
+#INDmenu-btn .accessibility-widget-button__icon *,
+#INDmenu-btn:focus .accessibility-widget-button__icon * {
+	fill: var(--color-content-high) !important;
+}
+
+#INDbtnWrap {
+	height: auto !important;
+}
+
+@media screen and (min-width: 768px) {
+	.accessibility-widget-button {
+		bottom: 130px !important;
+	}
+	[dir=ltr] .accessibility-widget-button {
+		right: 32px !important;
+	}
+	[dir=rtl] .accessibility-widget-button {
+		left: 32px !important;
+	}
+
+	/* Overwrite right margin for Chrome accesibility button */
+	[dir=ltr] .INDpositionRight #INDmenu-btn {
+		right: 32px !important;
+	}
+	[dir=rtl] .INDpositionRight #INDmenu-btn {
+		left: 32px !important;
+	}
+}
+
+:root {
+	--chat-bottom-distance: 178px;
+}
+
+.chat {
+	transition: z-index 1s step-end;
+}
+
+/* Important: required to override ZARAFRCH styles */
+.chat--over-a11y-widget .tray,
+.chat--over-a11y-widget .chat-panel {
+	/* stylelint-disable-next-line declaration-no-important */
+	bottom: var(--chat-bottom-distance) !important;
+	max-height: calc(100% - var(--chat-bottom-distance));
+}
+
+.chat--over-a11y-widget .chat-panel__body,
+.chat--over-a11y-widget .chat-alert-dialog {
+	overflow: auto;
+	scrollbar-width: thin;
+}
+
+.chat.chat--under-minicart {
+	transition: none;
+	/* stylelint-disable-next-line declaration-no-important */
+	z-index: 1 !important;
+}
+
+/* stylelint-disable selector-max-id, selector-max-type, selector-max-compound-selectors */
+#app-root,
+#theme-app > div {
+	min-height: inherit;
+}
+
+/*
+	These styles are needed to correctly integrate the chat header
+	in mobile version (responsive mode)
+*/
+[dir] .chat-header-container--visible ~ #app-root .layout__header {
+	margin-top: 44px;
+}
+
+@media screen and (min-width: 768px) {
+	[dir] .chat-header-container--visible ~ #app-root .layout__header {
+		margin-top: 0;
+	}
+}
+
